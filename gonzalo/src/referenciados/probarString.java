@@ -16,7 +16,7 @@ public class probarString {
      */
     public static void main(String[] args) {
         String hola="hola";
-        String hola2=new String("Hola 2");//objeto instanciado
+        String hola2 = new String("Hola 2");//objeto instanciado
         
         int[]enteros={4,24,12,-7};
         int otro []={34,3};

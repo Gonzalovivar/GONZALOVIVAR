@@ -143,7 +143,13 @@ public class Interface extends javax.swing.JFrame {
     private void transformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transformarActionPerformed
         // TODO add your handling code here:
          
-      
+
+        //paso 1 pedirle al textfield su texto
+        frase.getText();
+        byte[]arreglo=f.
+        
+        
+        
     //imprimir etiqueta con un settext
     //clase construir string arreglo bits mete en string
     
