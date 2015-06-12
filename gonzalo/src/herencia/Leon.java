@@ -14,8 +14,6 @@ public class Leon extends Animal implements ComportamientoRuido{
     @Override//tipo de notacion (sobrescritura)override sobrescribe el metodo abstracto que tiene la interfaz
     public String hacerRuido() {
         //tipo de retorno 
-        return"grrrr";
+        return"grrrruuaar" + ""+ getNombre();
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-}
+    }}

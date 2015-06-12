@@ -9,13 +9,12 @@ package herencia;
  *
  * @author T-107
  */
-public class Tortuga extends Animal implements ComportamientoRuido{
-    
+
+public class pollo extends Animal implements ComportamientoRuido{
     
     @Override//tipo de notacion (sobrescritura)override sobrescribe el metodo abstracto que tiene la interfaz
     public String hacerRuido() {
         //tipo de retorno 
-        return"buuu";
+        return"pio-pio-pio"+ ""+ getNombre();
 }
 }
-

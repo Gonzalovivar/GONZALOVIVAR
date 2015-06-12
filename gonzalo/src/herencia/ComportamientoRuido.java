@@ -14,8 +14,20 @@ public interface ComportamientoRuido {
     //interfaz puros metdos abstractos
         public String hacerRuido();
         
+        
+        
+   /*int Chapultepec[]={p1,l1.l2,d1,a1};
    
+   
+
+for(int i=0;i<Chapultepec.length;i++){
+    System.out.println("ESTE ELEMENTO TIENE UN VALOR DE:"+x[i]);*/
+
         
-        
-        
+
 }
+
+
+        
+        
+
