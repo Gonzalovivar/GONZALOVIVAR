@@ -22,5 +22,18 @@ public class Antro {
 // usuario u = new Usuario(ffwf,323,sdsf,new Direccion(3434."sfdsf"));
 
 
+    Bebida bebida=new Bebida();
+    bebida.setTipo("alcoholicas");
+    
+    String [] reco= bebida.ObtenerRecomendaciones();
+    
+    for (String be:reco){
+     
+        System.err.println("Bebida"+be);
+        
+        
+    }
+            
+    
     }
 }
