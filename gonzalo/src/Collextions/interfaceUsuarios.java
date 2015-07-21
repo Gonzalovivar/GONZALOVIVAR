@@ -20,6 +20,8 @@ public class interfaceUsuarios extends javax.swing.JFrame {
      */
     public interfaceUsuarios() {
         initComponents();
+        botonCargarUusario.setEnabled(false);
+        
     }
 
     /**
@@ -45,6 +47,7 @@ public class interfaceUsuarios extends javax.swing.JFrame {
         botonCargarUusario = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuarios = new javax.swing.JTable();
+        ComboSeleccion = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -138,6 +141,13 @@ public class interfaceUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaUsuarios);
 
+        ComboSeleccion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ordenar por nombre ", "Ordenar por edad" }));
+        ComboSeleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboSeleccionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -146,20 +156,24 @@ public class interfaceUsuarios extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(botonCargarUusario))
+                        .addComponent(botonCargarUusario)
+                        .addGap(27, 27, 27)
+                        .addComponent(ComboSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(botonCargarUusario)
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonCargarUusario)
+                    .addComponent(ComboSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("mostrar usuarios", jPanel2);
@@ -197,8 +211,12 @@ public class interfaceUsuarios extends javax.swing.JFrame {
         GeneradorDeUsuarios gen=new GeneradorDeUsuarios();
        List<Usuarios> usuarios= gen.getUsuarios();
         Collections.sort(usuarios, new UsuarioPorNombe());
+        tablaUsuarios.
         
-        tablaUsuarios.setModel(new DefaultTableModel(new String[]{"nombre","edad","email"},gen.getUsuarios().size()));
+             setModel(new
+                DefaultTableModel(
+                        new String[]{"nombre","edad","email"},gen.getUsuarios().size()));
+        //tablaUsuarios.setModel(new DefaultTableModel(new String[]{"nombre","edad","email"},gen.getUsuarios().size()));
  
 int fila=0;
 for(Usuarios u:usuarios){//ciclo for mejorado
@@ -207,13 +225,19 @@ for(Usuarios u:usuarios){//ciclo for mejorado
     tablaUsuarios.setValueAt(u.getEmail(),fila,2);
     fila ++;
 }
-
+    
 
 
 
     
 // TODO add your handling code here:
     }//GEN-LAST:event_botonCargarUusarioActionPerformed
+
+    private void ComboSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboSeleccionActionPerformed
+        // TODO add your handling code here:
+        botonCargarUusario.setEnabled(true);
+        int indice=ComboSeleccion.getSelectedIndex();
+    }//GEN-LAST:event_ComboSeleccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,6 +275,7 @@ for(Usuarios u:usuarios){//ciclo for mejorado
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox ComboSeleccion;
     private javax.swing.JButton botonCargarUusario;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

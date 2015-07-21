@@ -11,7 +11,7 @@ package Collextions;
  */
 public class Usuarios {
     private String nombre;
-    private int edad;
+    private Integer edad;
     private String email;
 
     public String getNombre() {
@@ -22,11 +22,11 @@ public class Usuarios {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
