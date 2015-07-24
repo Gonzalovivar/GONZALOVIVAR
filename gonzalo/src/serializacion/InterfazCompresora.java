@@ -18,12 +18,13 @@ public class InterfazCompresora {
         Animal a=new Animal();
                 a.setNombre("leon");
         a.setCarnivoro(true);
+        
+        
         ModeloPersistenciaAnimal modelo=new  ModeloPersistenciaAnimal();
         try {
             modelo.guardar(a);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-    }
-   
+    }  
 }
