@@ -11,16 +11,17 @@ import java.util.Calendar;
  *
  * @author T-107
  */
-public class ThreadPolimorfico implements Runnable {
+public class RelojitoMejorado {
+        public static void main(String[] args) {
+            /* aqui vamos a ver la forma de crear un thread usando la vieja tecnica de las clases internas anonimas */
+            //*constructor refrencia() clase thread
+            Thread t1=new Thread(new Runnable(){
 
-    public static void main(String[] args) {
-        Runnable r=new ThreadPolimorfico();
-        Thread t1=new Thread(r);
-        t1.start();
-    }
-    @Override
-    public void run() {
-       while (true){
+                @Override
+                public void run() {
+                
+               
+                  while (true){
         
         try{
              Thread.sleep(1000);
@@ -36,11 +37,16 @@ public class ThreadPolimorfico implements Runnable {
              
              
         }catch(Exception e){
-           
-            
             
         }
+    }   
+                
+                }
+                
+                
+            }); 
+            t1.start();
+        
     }
     
-}
 }
